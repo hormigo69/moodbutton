@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>Cacharrismo!</title>
+  </head>
+  <body>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <div class="notice">Tu cacharro ha apagado algo!</div>
+    <h1>Controla tu caja: dos</h1>
+
+    <p>
+<!--       <a href="/botones/encender/dos" onclick="encenderjquery()" >Encender </a> -->      
+<a href="#" onclick="encenderjquery()" >Encender </a>
+      
+    </p>
+    <p>
+      <a href="#" onclick="apagarjquery()" >Apagar </a>
+    </p>
+
+<script>
+function encenderjquery() {
+$.post( "https://api.spark.io/v1/devices/53ff6e066667574851351267/encender?access_token=ec2a56dea4b5f6a9475f09a45f80fea58fbc8364", function(data) { alert( "success " + JSON.stringify(data));}, "json"
+  )
+.done(function() {
+    alert( "done" );
+  })
+.fail(function() {
+    alert( "fail" );
+  })
+.always(function() {
+    alert( "always" );
+  });
+}
+</script>
+
+<script>
+function apagarjquery() {
+ $.post( "https://api.spark.io/v1/devices/53ff6e066667574851351267/apagar?access_token=ec2a56dea4b5f6a9475f09a45f80fea58fbc8364", function(data) { alert( "success " + JSON.stringify(data));}, "json"
+  )
+.done(function() {
+    alert( "done" );
+  })
+.fail(function() {
+    alert( "fail" );
+  })
+.always(function() {
+    alert( "always" );
+  });
+}
+</script>
+
+
+  </body>
+</html>
